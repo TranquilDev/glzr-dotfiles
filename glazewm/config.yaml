@@ -2,7 +2,7 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar']
+  startup_commands: ['shell-exec zebar', 'shell-exec C:/Users/Tranquil/.cargo/bin/glazetiler.exe']
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
@@ -20,7 +20,7 @@ general:
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
-    enabled: true
+    enabled: false
 
     # Trigger for cursor jump:
     # - 'monitor_focus': Jump when focus changes between monitors.
@@ -174,6 +174,91 @@ binding_modes:
         bindings: ['escape', 'enter']
 
 keybindings:
+  # >>> TRANQUIL CUSTOM KEYBINDINGS >>>
+
+  # Фокус.
+  - commands: ['focus --direction left']
+    bindings: ['win+left']
+  - commands: ['focus --direction right']
+    bindings: ['win+right']
+  - commands: ['focus --direction up']
+    bindings: ['win+up']
+  - commands: ['focus --direction down']
+    bindings: ['win+down']
+
+  # Перемещение окна.
+  - commands: ['move --direction left']
+    bindings: ['win+shift+left']
+  - commands: ['move --direction right']
+    bindings: ['win+shift+right']
+  - commands: ['move --direction up']
+    bindings: ['win+shift+up']
+  - commands: ['move --direction down']
+    bindings: ['win+shift+down']
+
+  # Float и fullscreen.
+  - commands: ['toggle-floating --centered']
+    bindings: ['win+f']
+  - commands: ['toggle-fullscreen']
+    bindings: ['win+shift+f']
+
+  # Закрыть сфокусированное окно.
+  - commands: ['close']
+    bindings: ['win+q']
+
+  # Приложения.
+  - commands: ['shell-exec "C:/Program Files/Rio/rio.exe"']
+    bindings: ['win+w']
+
+  - commands: ['shell-exec "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"']
+    bindings: ['win+b']
+
+  - commands: ['shell-exec explorer.exe']
+    bindings: ['win+e']
+
+  - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/open-workset.ps1"']
+    bindings: ['win+d']
+
+  - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/open-overwatch.ps1"']
+    bindings: ['win+o']
+
+  - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/open-telegram.ps1"']
+    bindings: ['win+t']
+
+  - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/toggle-system-proxy.ps1"']
+    bindings: ['win+v']
+
+  # Workspaces.
+  - commands: ['focus --workspace 1']
+    bindings: ['win+1']
+  - commands: ['focus --workspace 2']
+    bindings: ['win+2']
+  - commands: ['focus --workspace 3']
+    bindings: ['win+3']
+  - commands: ['focus --workspace 4']
+    bindings: ['win+4']
+  - commands: ['focus --workspace 5']
+    bindings: ['win+5']
+
+  - commands: ['move --workspace 1', 'focus --workspace 1']
+    bindings: ['win+shift+1']
+  - commands: ['move --workspace 2', 'focus --workspace 2']
+    bindings: ['win+shift+2']
+  - commands: ['move --workspace 3', 'focus --workspace 3']
+    bindings: ['win+shift+3']
+  - commands: ['move --workspace 4', 'focus --workspace 4']
+    bindings: ['win+shift+4']
+  - commands: ['move --workspace 5', 'focus --workspace 5']
+    bindings: ['win+shift+5']
+
+  # Управление GlazeWM.
+  - commands: ['wm-reload-config']
+    bindings: ['win+shift+r']
+
+  - commands: ['wm-toggle-pause']
+    bindings: ['win+shift+p']
+
+  # <<< TRANQUIL CUSTOM KEYBINDINGS <<<
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
     bindings: ['alt+h', 'alt+left']
@@ -322,3 +407,6 @@ keybindings:
     bindings: ['alt+shift+8']
   - commands: ['move --workspace 9', 'focus --workspace 9']
     bindings: ['alt+shift+9']
+
+
+
