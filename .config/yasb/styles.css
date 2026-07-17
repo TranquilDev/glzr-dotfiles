@@ -591,197 +591,194 @@
 .taskbar-preview .close-button:hover {
     background-color: rgba(243, 139, 168, 0.7);
 }
-/* Прозрачное окно панели, видимы только отдельные виджеты */
+
+/* HYPRWIN SAFE MATTE START */
 .yasb-bar {
-    background-color: transparent;
-}
-/* YASB LAUNCHPAD CUSTOM */
-.launchpad-widget {
-    padding: 0 7px;
-}
-
-.launchpad-widget:hover {
-    background-color: var(--ctp-mocha-surface);
-}
-
-.launchpad-widget .icon {
-    color: var(--ctp-mocha-primary);
-    font-size: 19px;
-}
-
-.launchpad .launchpad-container {
-    background-color: rgba(17, 17, 27, 0.94);
-}
-
-.launchpad .search-container {
-    min-height: 68px;
-    border-bottom: 1px solid rgba(203, 166, 247, 0.35);
-    background-color: rgba(30, 30, 46, 0.76);
-}
-
-.launchpad .search-input {
-    min-width: 480px;
-    min-height: 36px;
-    padding: 6px 14px;
-    border: 1px solid rgba(203, 166, 247, 0.45);
-    border-radius: 18px;
-    background-color: rgba(17, 17, 27, 0.82);
-    color: var(--ctp-mocha-text);
-    font-family: var(--font-ui);
-    font-size: 14px;
-}
-
-.launchpad .search-input:focus {
-    border: 1px solid var(--ctp-mocha-primary);
-    background-color: rgba(49, 50, 68, 0.88);
-}
-
-.launchpad .app-icon,
-.launchpad .group-icon {
-    min-width: 112px;
-    max-width: 112px;
-    min-height: 112px;
-    max-height: 112px;
-    margin: 10px;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    background-color: rgba(49, 50, 68, 0.32);
-}
-
-.launchpad .app-icon:hover,
-.launchpad .app-icon:focus,
-.launchpad .group-icon:hover,
-.launchpad .group-icon:focus {
-    border: 1px solid var(--ctp-mocha-primary);
-    background-color: rgba(69, 71, 90, 0.68);
-}
-
-.launchpad .app-icon .title,
-.launchpad .group-icon .title {
-    color: var(--ctp-mocha-text);
-    font-family: var(--font-ui);
-    font-size: 13px;
-}
-
-
-/* LAUNCHPAD FINAL START */
-
-.launchpad {
-    background-color: rgba(12, 10, 22, 0.58);
-}
-
-.launchpad QWidget,
-.launchpad QLabel,
-.launchpad QScrollArea,
-.launchpad QAbstractScrollArea::viewport {
-    background-color: transparent;
-}
-
-.launchpad .launchpad-container {
-    background-color: rgba(17, 14, 29, 0.78);
-    border: 1px solid rgba(203, 166, 247, 0.55);
-    border-radius: 18px;
-}
-
-.launchpad .search-container {
-    min-height: 76px;
-    padding: 0 22px;
-    border-bottom: 1px solid rgba(203, 166, 247, 0.22);
-    background-color: rgba(30, 25, 48, 0.58);
-}
-
-.launchpad .search-input {
-    min-width: 520px;
-    min-height: 40px;
-    max-height: 40px;
-    padding: 7px 16px;
-    border: 1px solid rgba(203, 166, 247, 0.38);
-    border-radius: 20px;
-    background-color: rgba(10, 8, 18, 0.70);
-    color: #cdd6f4;
-    font-family: "Segoe UI";
-    font-size: 15px;
-}
-
-.launchpad .search-input:focus {
-    border: 1px solid #cba6f7;
-    background-color: rgba(30, 25, 48, 0.88);
-}
-
-.launchpad .launchpad-scroll-area {
+    background-color: rgba(24, 24, 37, 0.46);
     border: none;
+}
+
+.container-left,
+.container-center,
+.container-right,
+.left-island,
+.right-island,
+.left-island .container,
+.right-island .container {
     background-color: transparent;
-}
-
-.launchpad QLabel {
-    color: rgba(205, 214, 244, 0.82);
-    font-family: "Segoe UI";
-}
-
-.launchpad .app-icon,
-.launchpad .group-icon {
-    min-width: 116px;
-    max-width: 116px;
-    min-height: 116px;
-    max-height: 116px;
-    margin: 14px 8px 8px 8px;
-    padding-top: 10px;
-    border: 1px solid rgba(203, 166, 247, 0.12);
-    border-radius: 15px;
-    background-color: rgba(69, 71, 90, 0.20);
-}
-
-.launchpad .app-icon:hover,
-.launchpad .app-icon:focus,
-.launchpad .group-icon:hover,
-.launchpad .group-icon:focus {
-    border: 1px solid rgba(203, 166, 247, 0.88);
-    background-color: rgba(90, 72, 120, 0.48);
-}
-
-.launchpad .app-icon .title,
-.launchpad .group-icon .title {
-    margin-top: 5px;
-    color: #cdd6f4;
-    font-family: "Segoe UI";
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.launchpad .group-icon .group-icon-container {
-    border: 1px solid rgba(203, 166, 247, 0.30);
-    border-radius: 11px;
-    background-color: rgba(49, 42, 68, 0.68);
-}
-
-.launchpad .group-back-button {
-    padding: 0 26px;
     border: none;
+}
+/* HYPRWIN SAFE MATTE END */
+
+
+
+
+
+/* HYPRWIN BAR OPACITY START */
+.yasb-bar {
+    background-color: rgba(17, 17, 27, 0.10);
+}
+/* HYPRWIN BAR OPACITY END */
+
+/* HYPRWIN COMPACT BAR START */
+.yasb-bar {
+    padding: 0;
+}
+
+.home-widget,
+.taskbar-widget,
+.clock-widget,
+.volume-widget,
+.cpu-widget,
+.memory-widget,
+.gpu-widget,
+.notification-widget,
+.power-menu-widget,
+.media-widget {
+    min-height: 34px;
+    max-height: 34px;
+    margin: 0 2px;
+    border-radius: 7px;
+}
+
+.home-widget,
+.notification-widget,
+.power-menu-widget {
+    min-width: 34px;
+    max-width: 34px;
+    padding: 0;
+}
+
+.clock-widget,
+.volume-widget {
+    padding: 0 8px;
+}
+
+.cpu-widget,
+.memory-widget,
+.gpu-widget {
+    padding: 0 6px;
+}
+
+.taskbar-widget {
+    padding: 0 5px;
+}
+
+.taskbar-widget .app-container {
+    min-width: 32px;
+    max-width: 32px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 0 1px;
+    padding: 0;
+    border-radius: 7px;
+}
+
+.taskbar-widget .app-container .app-icon {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.taskbar-widget .app-container.foreground {
+    border: 1px solid rgba(203, 166, 247, 0.95);
+    background-color: rgba(203, 166, 247, 0.22);
+}
+/* HYPRWIN COMPACT BAR END */
+
+/* HYPRWIN SEELEN VOLUME START */
+
+/* Чуть просторнее само меню. */
+.audio-menu {
+    min-width: 330px;
+    padding: 12px;
+}
+
+/* Общая громкость и регуляторы приложений. */
+.audio-menu .system-volume-container .volume-slider,
+.audio-menu .apps-container .app-volume .app-slider {
+    min-height: 30px;
+    margin: 2px 4px;
+}
+
+/* Толстая основная линия. */
+.audio-menu .system-volume-container .volume-slider::groove:horizontal,
+.audio-menu .apps-container .app-volume .app-slider::groove:horizontal {
+    height: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(127, 132, 156, 0.26);
+}
+
+/* Заполненная часть. */
+.audio-menu .system-volume-container .volume-slider::sub-page:horizontal,
+.audio-menu .apps-container .app-volume .app-slider::sub-page:horizontal {
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(203, 166, 247, 0.95);
+}
+
+/* Пустая часть. */
+.audio-menu .system-volume-container .volume-slider::add-page:horizontal,
+.audio-menu .apps-container .app-volume .app-slider::add-page:horizontal {
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(127, 132, 156, 0.26);
+}
+
+/*
+ * Невидимый широкий бегунок.
+ * Внешне остаётся только линия, но мышью легко зацепить и тянуть.
+ */
+.audio-menu .system-volume-container .volume-slider::handle:horizontal,
+.audio-menu .apps-container .app-volume .app-slider::handle:horizontal {
+    width: 24px;
+    height: 22px;
+    margin: -6px 0;
+    border: none;
+    border-radius: 0;
     background-color: transparent;
-    color: #cba6f7;
-    font-family: "Segoe UI";
-    font-size: 16px;
 }
 
-.launchpad .context-menu {
-    padding: 5px;
-    border: 1px solid rgba(203, 166, 247, 0.28);
-    border-radius: 9px;
-    background-color: rgba(17, 14, 29, 0.96);
-    color: #cdd6f4;
-    font-family: "Segoe UI";
-}
-
-.launchpad .context-menu::item {
-    margin: 2px;
-    padding: 7px 13px;
+/* При наведении линия слегка светлеет. */
+.audio-menu .system-volume-container .volume-slider::groove:horizontal:hover,
+.audio-menu .apps-container .app-volume .app-slider::groove:horizontal:hover {
+    height: 12px;
     border-radius: 6px;
+    background-color: rgba(166, 173, 200, 0.34);
+}
+
+/* Иконки приложений без тяжёлых квадратных карточек. */
+.audio-menu .apps-container .app-volume .app-icon-container {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 2px 8px 2px 0;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(203, 166, 247, 0.08);
+}
+
+.audio-menu .apps-container .app-volume .app-icon-container:hover {
+    border: none;
+    background-color: rgba(203, 166, 247, 0.16);
+}
+
+/* Убираем ненужную кнопку-стрелку: приложения уже раскрыты. */
+.audio-menu .toggle-apps {
+    min-width: 0;
+    max-width: 0;
+    min-height: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
     background-color: transparent;
 }
 
-.launchpad .context-menu::item:selected {
-    background-color: rgba(203, 166, 247, 0.20);
-    color: white;
-}
-
-/* LAUNCHPAD FINAL END */
+/* HYPRWIN SEELEN VOLUME END */

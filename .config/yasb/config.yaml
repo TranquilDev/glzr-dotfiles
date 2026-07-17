@@ -14,9 +14,11 @@ bars:
       enabled: true
       duration: 1000
     blur_effect:
-      enabled: false
-      round_corners: true
+      enabled: true
+      acrylic: true
       dark_mode: true
+      round_corners: true
+      border_color: "None"
     window_flags:
       always_on_top: false
       windows_app_bar: true
@@ -27,56 +29,79 @@ bars:
       auto_hide: false
     dimensions:
       width: "100%"
-      height: 48
+      height: 46
     layouts:
       center:
         alignment: "center"
         stretch: false
     padding:
-      top: 4
+      top: 3
       left: 8
-      bottom: 4
+      bottom: 3
       right: 8
     widgets:
       left:
-        [
-          "home", "taskbar",
-          "clock",
-          "volume",
-          "glazewm_workspaces",
-          "active_window"
-        ]
-      center: ["media"]
+      - left-island
+      center:
+      - media
       right:
-        [
-          "hardware-grouper",
-          "glazewm_tiling_direction",
-          "glazewm_binding_mode",
-          "wallpapers",
-          "notifications",
-          "power_menu"
-        ]
+      - right-island
 widgets:
+  left-island:
+    type: yasb.grouper.GrouperWidget
+    options:
+      class_name: left-island
+      widgets:
+      - home
+      - taskbar
+      - clock
+      - volume
+      collapse_options:
+        enabled: false
+  right-island:
+    type: yasb.grouper.GrouperWidget
+    options:
+      class_name: right-island
+      widgets:
+      - cpu
+      - memory
+      - gpu
+      - notifications
+      - power_menu
+      collapse_options:
+        enabled: false
   home:
     type: "yasb.home.HomeWidget"
     options:
       blur: true
       round_corners: true
-      label: "<span>\uf004</span>"
+      label: "<span></span>"
       menu_list:
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf015; </span>Home", path: "~" }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf108; </span>Desktop", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Desktop" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf019; </span>Downloads", command: "explorer", args: [ "%USERPROFILE%\\Downloads" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf07c; </span>Documents", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Documents" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf03e; </span>Pictures", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Pictures" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf03d; </span>Videos", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Videos" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf001; </span>Music", command: "explorer", args: [ "%USERPROFILE%\\OneDrive\\Music" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf023; </span>AppData", command: "explorer", args: [ "%APPDATA%" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf1f8; </span>Recycle Bin", command: "explorer", args: [ "shell:RecycleBinFolder" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf013; </span>Settings", command: "start", args: [ "ms-settings:" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf0ad; </span>Control Panel", command: "control", args: [ "" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf437; </span>Task Manager", command: "taskmgr", args: [ "" ], shell: true }
-        - { title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf05a; </span>About", command: "winver", args: [ "" ], shell: true }
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf015; </span>Home", path: "~"}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf108; </span>Desktop", command: "explorer", args: [
+          "%USERPROFILE%\\OneDrive\\Desktop"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf019; </span>Downloads", command: "explorer", args: [
+          "%USERPROFILE%\\Downloads"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf07c; </span>Documents", command: "explorer", args: [
+          "%USERPROFILE%\\OneDrive\\Documents"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf03e; </span>Pictures", command: "explorer", args: [
+          "%USERPROFILE%\\OneDrive\\Pictures"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf03d; </span>Videos", command: "explorer", args: ["%USERPROFILE%\\\
+            OneDrive\\Videos"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf001; </span>Music", command: "explorer", args: ["%USERPROFILE%\\\
+            OneDrive\\Music"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf023; </span>AppData", command: "explorer", args: [
+          "%APPDATA%"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf1f8; </span>Recycle Bin", command: "explorer", 
+          args: ["shell:RecycleBinFolder"], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf013; </span>Settings", command: "start", args: ["ms-settings:"],
+        shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf0ad; </span>Control Panel", command: "control", 
+          args: [""], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf437; </span>Task Manager", command: "taskmgr", 
+          args: [""], shell: true}
+      - {title: "<span style='font-family: \"JetBrainsMono NFP\";'>&#xf05a; </span>About", command: "winver", args: [""],
+        shell: true}
       system_menu: false
       power_menu: false
       alignment: "left"
@@ -84,7 +109,7 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "<span>\uf017</span>{%a. %B %d, %H:%M %p}"
+      label: "<span></span>{%a. %B %d, %H:%M %p}"
       tooltip: false
       timezones: []
       calendar:
@@ -104,11 +129,11 @@ widgets:
       tooltip: false
       mute_text: "Muted"
       icons:
-        - "\ueee8"
-        - "\uf026"
-        - "\uf027"
-        - "\uf027"
-        - "\uf028"
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
       audio_menu:
         blur: true
         round_corners: true
@@ -129,7 +154,7 @@ widgets:
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
-      icon_size: 20
+      icon_size: 24
       tooltip: false
       show_only_visible: false
       strict_filtering: true
@@ -152,7 +177,7 @@ widgets:
         on_right: "context_menu"
       ignore_apps:
         processes:
-          - "yasb"
+        - "yasb"
         titles: []
         classes: []
   active_window:
@@ -172,107 +197,137 @@ widgets:
   media:
     type: "yasb.media.MediaWidget"
     options:
-      label: "\uf001  {title}  \uee83"
-      label_alt: "\uf001  {artist} {s} {title}  \uee83"
-      separator: "-"
+      label: "{title}{s}{artist}"
+      label_alt: "{artist}{s}{title}"
+      separator: "  •  "
+
+      # Полностью скрывать плеер, когда Windows не отдаёт медиасессию.
       hide_empty: true
-      controls_hide: true
+
+      # Плеер с обложкой, текстом и кнопками.
+      controls_only: false
+      controls_left: false
+      controls_hide: false
+
       show_thumbnail: true
       thumbnail_alpha: 100
       thumbnail_padding: 0
+      thumbnail_corner_radius: 8
+      symmetric_corner_radius: true
+      thumbnail_edge_fade: true
+
       max_field_size:
-        label: 48
-        label_alt: 48
+        label: 34
+        label_alt: 34
+        truncate_whole_label: false
+
+      icons:
+        prev_track: "\uf048"
+        next_track: "\uf051"
+        play: "\uf04b"
+        pause: "\uf04c"
+
       scrolling_label:
         enabled: true
-        update_interval_ms: 60
-        style: "left"
+        update_interval_ms: 45
+        style: "bounce-ease"
         separator: "      "
+        label_padding: 1
         always_scroll: false
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
+
+      progress_bar:
+        enabled: true
+        alignment: "bottom"
+
       media_menu:
         blur: true
         round_corners: true
+        round_corners_type: "normal"
+        border_color: "None"
         alignment: "center"
         direction: "down"
-        thumbnail_corner_radius: 4
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 10
         thumbnail_size: 180
-        max_title_size: 100
-        max_artist_size: 100
+        max_title_size: 70
+        max_artist_size: 40
         show_source: true
+        show_volume_slider: false
+
       media_menu_icons:
         play: "\uf04b"
         pause: "\uf04c"
         prev_track: "\uf048"
         next_track: "\uf051"
-      progress_bar:
-        enabled: true
-        alignment: bottom
+        mute: "\uf6a9"
+        unmute: "\uf028"
+
       callbacks:
         on_left: "toggle_media_menu"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"
+        on_middle: "toggle_play_pause"
+        on_right: "open_media_source"
   hardware-grouper:
     type: "yasb.grouper.GrouperWidget"
     options:
       class_name: "hardware-grouper"
-      widgets: [
-        "cpu",
-        "memory",
-        "gpu"
-      ]
+      widgets: ["cpu", "memory", "gpu"]
       collapse_options:
         enabled: true
-        expanded_label: "\uf054"
-        collapsed_label: "\uf053"
+        expanded_label: ""
+        collapsed_label: ""
         label_position: "right"
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
-      label: "<span>\uf4bc</span>CPU: {info[percent][total]}%"
-      label_alt: "<span>\uf4bc</span> {info[percent][total]}%"
-      update_interval: 15000
+      label: "<span></span>CPU: {info[percent][total]}%"
+      label_alt: "<span></span> {info[percent][total]}%"
+      update_interval: 5000
       hide_decimal: true
       callbacks:
-        on_left: "toggle_label"
+        on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "<span>\uefc5</span>RAM: {virtual_mem_percent}%"
-      label_alt: "<span>\uefc5</span> {virtual_mem_percent}%"
-      update_interval: 15000
+      label: "<span></span>RAM: {virtual_mem_percent}%"
+      label_alt: "<span></span> {virtual_mem_percent}%"
+      update_interval: 5000
       hide_decimal: true
       callbacks:
-        on_left: "toggle_label"
+        on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   gpu:
     type: "yasb.gpu.GpuWidget"
     options:
-      label: "<span>\uf2db</span>GPU: {info[utilization]}%"
-      label_alt: "<span>\uf2db</span> {info[utilization]}%"
-      update_interval: 15000
+      label: "<span></span>GPU: {info[utilization]}%"
+      label_alt: "<span></span> {info[utilization]}%"
+      update_interval: 5000
       hide_decimal: true
       callbacks:
-        on_left: "toggle_label"
+        on_left: "do_nothing"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   glazewm_tiling_direction:
     type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
     options:
-      horizontal_label: "\udb81\udce1"
-      vertical_label: "\udb81\udce2"
+      horizontal_label: "\uDB81\uDCE1"
+      vertical_label: "\uDB81\uDCE2"
   glazewm_binding_mode:
     type: "glazewm.binding_mode.GlazewmBindingModeWidget"
     options:
       label: "<span>{icon}</span>"
       hide_if_no_active: false
-      default_icon: "\uf005"
+      default_icon: ""
       icons:
-        none: "\uf005"
-        resize: "\uf065"
-        pause: "\uf468"
+        none: ""
+        resize: ""
+        pause: ""
       binding_modes_to_cycle_through: ["none", "resize", "pause"]
       callbacks:
         on_left: "next_binding_mode"
@@ -281,8 +336,8 @@ widgets:
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
-      label: "<span>\uf03e</span>"
-      image_path: "C:\\Wallpapers" 
+      label: "<span></span>"
+      image_path: "C:\\Wallpapers"
       tooltip: false
       gallery:
         enabled: true
@@ -306,8 +361,8 @@ widgets:
       hide_empty: false
       tooltip: false
       icons:
-        new: "\uf0f3"
-        default: "\uf0a2"
+        new: ""
+        default: ""
       callbacks:
         on_left: "toggle_notification"
         on_right: "do_nothing"
@@ -315,7 +370,7 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
-      label: "<span>\uf011</span>"
+      label: "<span></span>"
       uptime: true
       show_user: true
       profile_image_size: 128
@@ -324,10 +379,10 @@ widgets:
       button_row: 6
       menu_style: "fullscreen"
       buttons:
-        signout: ["\uf08b", "Sign Out"]
-        shutdown: ["\uf011", "Shut Down"]
-        restart: ["\uead2", "Restart"]
-        hibernate: ["\uf28e", "Hibernate"]
-        sleep: ["\udb82\udd04", "Sleep"]
-        lock: ["\uf023", "Lock"]
-        cancel: ["\udb81\udf3a", "Cancel"]
+        signout: ["", "Sign Out"]
+        shutdown: ["", "Shut Down"]
+        restart: ["", "Restart"]
+        hibernate: ["", "Hibernate"]
+        sleep: ["\uDB82\uDD04", "Sleep"]
+        lock: ["", "Lock"]
+        cancel: ["\uDB81\uDF3A", "Cancel"]
