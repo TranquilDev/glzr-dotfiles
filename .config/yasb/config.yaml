@@ -5,7 +5,7 @@ update_check: true
 bars:
   status-bar:
     enabled: true
-    screens: ["*"]
+    screens: ["primary"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -47,6 +47,58 @@ bars:
       right:
       - right-island
 widgets:
+widgets:
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "{lang[language_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 1
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      language_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "⌨"
+
+  games:
+    type: "yasb.launchpad.LaunchpadWidget"
+    options:
+      label: "🎮"
+      search_placeholder: "Поиск игр..."
+      app_icon_size: 56
+      window:
+        fullscreen: false
+        width: 900
+        height: 650
+        overlay_block: true
+      window_style:
+        enable_blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+      window_animation:
+        fade_in_duration: 120
+        fade_out_duration: 100
+      group_apps: true
+      callbacks:
+        on_left: "toggle_launchpad"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+      keybindings:
+        - keys: "alt+g"
+          action: "toggle_launchpad"
+          screen: "cursor"
+  left-island:
   left-island:
     type: yasb.grouper.GrouperWidget
     options:
@@ -58,6 +110,25 @@ widgets:
       - volume
       collapse_options:
         enabled: false
+  vpn_status:
+    type: "yasb.custom.CustomWidget"
+    options:
+      class_name: "vpn-status-widget"
+      label: "\uf132"
+      label_alt: "\uf132"
+      label_placeholder: "\uf132"
+      tooltip: true
+      tooltip_label: "{data[text]}"
+      exec_options:
+        run_cmd: "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\Tranquil\\.config\\yasb\\vpn-status.ps1"
+        run_interval: 1000
+        return_format: "json"
+        hide_empty: false
+      callbacks:
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+
   right-island:
     type: yasb.grouper.GrouperWidget
     options:
@@ -66,8 +137,10 @@ widgets:
       - cpu
       - memory
       - gpu
+      - vpn_status
       - notifications
       - power_menu
+      - language
       collapse_options:
         enabled: false
   home:
@@ -158,7 +231,7 @@ widgets:
       tooltip: false
       show_only_visible: false
       strict_filtering: true
-      monitor_exclusive: true
+      monitor_exclusive: false
       hide_empty: false
       animation:
         enabled: true

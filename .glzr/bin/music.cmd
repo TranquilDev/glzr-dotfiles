@@ -1,0 +1,1 @@
+@powershell.exe -NoProfile -WindowStyle Hidden -Command "$p=Get-ChildItem -LiteralPath 'C:\Users\Tranquil\AppData\Local\Programs\YandexMusic' -Filter *.exe | Where-Object Name -NotMatch 'unins|update|crash' | Sort-Object Length -Descending | Select-Object -First 1; Start-Process -FilePath $p.FullName"
