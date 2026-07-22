@@ -526,5 +526,5 @@ widgets:
       app_list:
         - icon: "\uf11b"
           launch: 'wscript.exe C:\Users\Tranquil\.config\yasb\scripts\game-mode-toggle.vbs'
-          name: "Game mode: block or unblock Alt"
+          name: "Game mode: disable GlazeWM Alt hotkeys"
   # HYPR GAME MODE WIDGET END

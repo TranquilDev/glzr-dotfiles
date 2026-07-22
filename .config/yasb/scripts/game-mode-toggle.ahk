@@ -2,8 +2,9 @@
 #SingleInstance Off
 
 StateDir := EnvGet("LOCALAPPDATA") "\HyprWin"
-StateFile := StateDir "\alt-lock.state"
+StateFile := StateDir "\game-mode.state"
 StylesFile := EnvGet("USERPROFILE") "\.config\yasb\styles.css"
+GlazeExe := "C:\Program Files\glzr.io\GlazeWM\cli\glazewm.exe"
 
 DirCreate(StateDir)
 
@@ -12,22 +13,44 @@ enabled := ReadState()
 
 switch action {
     case "on":
-        enabled := true
+        target := true
 
     case "off":
-        enabled := false
+        target := false
 
     case "sync":
-        ; Keep current state.
+        target := enabled
 
     default:
-        enabled := !enabled
+        target := !enabled
 }
 
-if action != "sync"
-    WriteState(enabled)
+if action != "sync" {
+    if target {
+        command := "wm-enable-binding-mode --name game"
+        exitCode := RunWait(
+            '"' . GlazeExe . '" command ' . command,
+            ,
+            "Hide"
+        )
 
-UpdateVisual(enabled)
+        if exitCode != 0
+            ExitApp(exitCode)
+    } else {
+        command := "wm-disable-binding-mode --name game"
+
+        ; Ошибку игнорируем: режим мог уже быть выключен.
+        try RunWait(
+            '"' . GlazeExe . '" command ' . command,
+            ,
+            "Hide"
+        )
+    }
+
+    WriteState(target)
+}
+
+UpdateVisual(target)
 ExitApp()
 
 ReadState() {
@@ -81,7 +104,10 @@ UpdateVisual(enabled) {
 /* HYPR GAME MODE STATE END */
 )"
 
-        css := RTrim(css, "`r`n") . "`r`n`r`n" . activeCss . "`r`n"
+        css := RTrim(css, "`r`n") .
+            "`r`n`r`n" .
+            activeCss .
+            "`r`n"
     }
 
     WriteUtf8(StylesFile, css)

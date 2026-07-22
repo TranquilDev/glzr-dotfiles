@@ -157,7 +157,85 @@ window_rules:
       - window_process: { equals: 'POWERPNT' }
         window_class: { not_regex: 'PPTFrameClass' }
 
-binding_modes: []
+# >>> HYPR GAME MODE >>>
+binding_modes:
+  - name: 'game'
+    keybindings:
+      - commands: ['focus --direction left']
+        bindings: ['win+left']
+      - commands: ['focus --direction right']
+        bindings: ['win+right']
+      - commands: ['focus --direction up']
+        bindings: ['win+up']
+      - commands: ['focus --direction down']
+        bindings: ['win+down']
+    
+      # Перемещение окна.
+      - commands: ['move --direction left']
+        bindings: ['win+shift+left']
+      - commands: ['move --direction right']
+        bindings: ['win+shift+right']
+      - commands: ['move --direction up']
+        bindings: ['win+shift+up']
+      - commands: ['move --direction down']
+        bindings: ['win+shift+down']
+    
+      # Float и fullscreen.
+      - commands: ['toggle-floating --centered']
+        bindings: ['win+f']
+      - commands: ['toggle-fullscreen']
+        bindings: ['win+shift+f']
+    
+      # Закрыть сфокусированное окно.
+      - commands: ['close']
+        bindings: ['win+q']
+    
+      # Приложения.
+      - commands: ['shell-exec cmd.exe /c C:\Users\Tranquil\.glzr\bin\rio.cmd']
+        bindings: ['win+w']
+      - commands: ['shell-exec "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"']
+        bindings: ['win+b']
+      - commands: ['shell-exec explorer.exe']
+        bindings: ['win+e']
+      - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/open-workset.ps1"']
+        bindings: ['win+d']
+      - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/open-overwatch.ps1"']
+        bindings: ['win+o']
+      - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/open-telegram.ps1"']
+        bindings: ['win+t']
+      - commands: ['shell-exec --hide-window powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:/Users/Tranquil/.glzr/scripts/toggle-system-proxy.ps1"']
+        bindings: ['win+v']
+    
+      # Workspaces.
+      - commands: ['focus --workspace 1']
+        bindings: ['win+1']
+      - commands: ['focus --workspace 2']
+        bindings: ['win+2']
+      - commands: ['focus --workspace 3']
+        bindings: ['win+3']
+      - commands: ['focus --workspace 4']
+        bindings: ['win+4']
+      - commands: ['focus --workspace 5']
+        bindings: ['win+5']
+      - commands: ['move --workspace 1', 'focus --workspace 1']
+        bindings: ['win+shift+1']
+      - commands: ['move --workspace 2', 'focus --workspace 2']
+        bindings: ['win+shift+2']
+      - commands: ['move --workspace 3', 'focus --workspace 3']
+        bindings: ['win+shift+3']
+      - commands: ['move --workspace 4', 'focus --workspace 4']
+        bindings: ['win+shift+4']
+      - commands: ['move --workspace 5', 'focus --workspace 5']
+        bindings: ['win+shift+5']
+    
+      # Управление GlazeWM.
+      - commands: ['wm-reload-config']
+        bindings: ['win+shift+r']
+      # Emergency game-mode exit.
+      - commands:
+          - 'shell-exec --hide-window wscript.exe C:/Users/Tranquil/.config/yasb/scripts/game-mode-off.vbs'
+        bindings: ['win+shift+p']
+# <<< HYPR GAME MODE <<<
 
 keybindings:
   # >>> TRANQUIL CUSTOM KEYBINDINGS >>>
@@ -193,7 +271,7 @@ keybindings:
     bindings: ['win+q']
 
   # Приложения.
-  - commands: ['shell-exec "C:/Program Files/Rio/rio.exe"']
+  - commands: ['shell-exec cmd.exe /c C:\Users\Tranquil\.glzr\bin\rio.cmd']
     bindings: ['win+w']
 
   - commands: ['shell-exec "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"']
@@ -285,10 +363,7 @@ keybindings:
     bindings: ['alt+shift+space']
 
   # Change the focused window to be tiling.
-  - commands: ['toggle-tiling']
-    bindings: ['alt+t']
-
-  # Change the focused window to be fullscreen.
+# Change the focused window to be fullscreen.
   - commands: ['toggle-minimized']
     bindings: ['alt+f']
 
@@ -352,8 +427,6 @@ keybindings:
   # direction.
   - commands: ['move-workspace --direction left']
     bindings: ['alt+shift+a']
-  - commands: ['move-workspace --direction right']
-    bindings: ['alt+shift+f']
   - commands: ['move-workspace --direction up']
     bindings: ['alt+shift+d']
   - commands: ['move-workspace --direction down']
@@ -395,3 +468,6 @@ keybindings:
 
   - commands: ['close']
     bindings: ['alt+q']
+# Open Telegram.
+  - commands: ['shell-exec cmd.exe /c C:\Users\Tranquil\.glzr\bin\telegram.cmd']
+    bindings: ['alt+t']

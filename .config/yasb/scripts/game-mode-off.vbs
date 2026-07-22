@@ -1,0 +1,2 @@
+Set shell = CreateObject("WScript.Shell")
+shell.Run """C:\Users\Tranquil\AppData\Local\Programs\AutoHotkey\v2\AutoHotkey64.exe"" ""C:\Users\Tranquil\.config\yasb\scripts\game-mode-toggle.ahk"" off", 0, False

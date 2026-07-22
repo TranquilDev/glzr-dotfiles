@@ -6,6 +6,8 @@ Persistent
 ; sc02F — физическая клавиша V в нижнем ряду клавиатуры.
 $^sc02F::Send("^v")
 
+; >>> HYPR GAME MODE AHK GUARD >>>
+#HotIf !IsGameModeActive()
 ; Приложения
 !w::LaunchNew("Rio")
 !e::Run("explorer.exe")
@@ -20,6 +22,8 @@ $^sc02F::Send("^v")
 !f::MinimizeActiveWindow()
 !LButton::MoveWindowUnderMouse()
 
+#HotIf
+; <<< HYPR GAME MODE AHK GUARD <<<
 ; Управление самим скриптом
 ^!+r::Reload()
 ^!+q::ExitApp()
@@ -146,3 +150,17 @@ FindStartMenuShortcut(name) {
 
     return fallback
 }
+; >>> HYPR GAME MODE STATE FUNCTION >>>
+IsGameModeActive() {
+    stateFile := EnvGet("LOCALAPPDATA") "\HyprWin\game-mode.state"
+
+    if !FileExist(stateFile)
+        return false
+
+    try {
+        return Trim(FileRead(stateFile, "UTF-8")) = "1"
+    } catch {
+        return false
+    }
+}
+; <<< HYPR GAME MODE STATE FUNCTION <<<
