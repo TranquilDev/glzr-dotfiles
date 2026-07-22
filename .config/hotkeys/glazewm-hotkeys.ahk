@@ -22,6 +22,10 @@ $^sc02F::Send("^v")
 !f::MinimizeActiveWindow()
 !LButton::MoveWindowUnderMouse()
 
+; >>> FLUENT SEARCH CLEAN CTRL ALT >>>
+~LControl & LAlt::OpenFluentSearchOnCleanChord("LControl", "LAlt")
+~LAlt & LControl::OpenFluentSearchOnCleanChord("LAlt", "LControl")
+; <<< FLUENT SEARCH CLEAN CTRL ALT >>>
 #HotIf
 ; <<< HYPR GAME MODE AHK GUARD <<<
 ; Управление самим скриптом
@@ -164,3 +168,18 @@ IsGameModeActive() {
     }
 }
 ; <<< HYPR GAME MODE STATE FUNCTION <<<
+; >>> FLUENT SEARCH CLEAN CTRL ALT FUNCTION >>>
+OpenFluentSearchOnCleanChord(firstKey, secondKey) {
+    KeyWait(firstKey)
+    KeyWait(secondKey)
+
+    lastPressed := A_PriorKey
+
+    ; При Ctrl+Alt+W, Ctrl+Alt+Q и других сочетаниях
+    ; последней нажатой клавишей будет не Ctrl и не Alt.
+    if (lastPressed != firstKey && lastPressed != secondKey)
+        return
+
+    SendEvent("^!{F12}")
+}
+; <<< FLUENT SEARCH CLEAN CTRL ALT FUNCTION <<<
