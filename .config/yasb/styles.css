@@ -885,3 +885,65 @@
     margin-left: 152px;
 }
 /* END POWER MENU POSITION FIX */
+/* HYPR GAME MODE RESTORED STYLE START */
+
+/* Same outer glass as the normal YASB widgets. */
+.game-mode-widget {
+    min-width: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+
+    margin: 4px;
+    padding: 0;
+
+    border: 1px solid var(--ctp-mocha-overlay);
+    border-radius: 4px;
+    background-color: var(--ctp-mocha-base);
+
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+}
+
+.game-mode-widget:hover {
+    background-color: var(--ctp-mocha-surface);
+}
+
+/* No inner capsule or second border. */
+.game-mode-widget .widget-container {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+}
+
+.game-mode-widget .label {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    color: var(--ctp-mocha-primary);
+    font-size: 16px;
+    font-weight: normal;
+
+    qproperty-alignment: AlignCenter;
+}
+
+.game-mode-widget:hover .label {
+    color: var(--ctp-mocha-text);
+}
+
+/* HYPR GAME MODE RESTORED STYLE END */

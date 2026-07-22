@@ -75,6 +75,9 @@ bars:
       center:
         alignment: "center"
         stretch: false
+      right:
+        alignment: "right"
+        stretch: false
     padding:
       top: 3
       left: 8
@@ -83,6 +86,8 @@ bars:
     widgets:
       center:
       - second-clock
+      right:
+      - game_mode
 widgets:
   second-clock:
     type: "yasb.clock.ClockWidget"
@@ -150,7 +155,6 @@ widgets:
         - keys: "alt+g"
           action: "toggle_launchpad"
           screen: "cursor"
-  left-island:
   left-island:
     type: yasb.grouper.GrouperWidget
     options:
@@ -511,3 +515,16 @@ widgets:
         sleep: ["\uDB82\uDD04", "Sleep"]
         lock: ["", "Lock"]
         cancel: ["\uDB81\uDF3A", "Cancel"]
+  # HYPR GAME MODE WIDGET START
+  # HYPR GAME MODE WIDGET START
+  game_mode:
+    type: "yasb.applications.ApplicationsWidget"
+    options:
+      class_name: "game-mode-widget"
+      label: "{data}"
+      tooltip: true
+      app_list:
+        - icon: "\uf11b"
+          launch: 'wscript.exe C:\Users\Tranquil\.config\yasb\scripts\game-mode-toggle.vbs'
+          name: "Game mode: block or unblock Alt"
+  # HYPR GAME MODE WIDGET END

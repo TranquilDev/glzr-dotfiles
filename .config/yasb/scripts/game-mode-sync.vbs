@@ -1,0 +1,2 @@
+Set shell = CreateObject("WScript.Shell")
+shell.Run "powershell.exe -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File ""C:\Users\Tranquil\.config\yasb\scripts\game-mode.ps1"" sync", 0, False
