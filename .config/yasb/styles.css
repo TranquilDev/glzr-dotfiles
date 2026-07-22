@@ -853,6 +853,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* VPN-DYNAMIC-BEGIN */
 .vpn-status-widget .label {
     color: #f4e6ff;
@@ -864,3 +880,8 @@
     qproperty-alignment: AlignCenter;
 }
 /* VPN-DYNAMIC-END */
+/* POWER MENU POSITION FIX */
+.power-menu-popup {
+    margin-left: 152px;
+}
+/* END POWER MENU POSITION FIX */

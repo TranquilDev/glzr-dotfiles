@@ -46,8 +46,60 @@ bars:
       - media
       right:
       - right-island
+  secondary-time-bar:
+    enabled: true
+    screens: ["AF24H1"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      align: "center"
+    animation:
+      enabled: true
+      duration: 1000
+    blur_effect:
+      enabled: true
+      acrylic: true
+      dark_mode: true
+      round_corners: true
+      border_color: "None"
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+      hide_on_maximized: false
+      hide_on_fullscreen: true
+      auto_hide: false
+    dimensions:
+      width: "100%"
+      height: 46
+    layouts:
+      center:
+        alignment: "center"
+        stretch: false
+    padding:
+      top: 3
+      left: 8
+      bottom: 3
+      right: 8
+    widgets:
+      center:
+      - second-clock
 widgets:
-widgets:
+  second-clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span></span> {%H:%M}"
+      tooltip: false
+      timezones: []
+      calendar:
+        blur: true
+        round_corners: true
+        alignment: "center"
+        direction: "down"
+        show_week_numbers: true
+      callbacks:
+        on_left: "toggle_calendar"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -230,7 +282,7 @@ widgets:
       icon_size: 24
       tooltip: false
       show_only_visible: false
-      strict_filtering: true
+      strict_filtering: false
       monitor_exclusive: false
       hide_empty: false
       animation:
