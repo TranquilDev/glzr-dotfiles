@@ -451,15 +451,6 @@ keybindings:
     bindings: ['alt+shift+8']
   - commands: ['move --workspace 9', 'focus --workspace 9']
     bindings: ['alt+shift+9']
-
-
-
-
-
-
-  - commands: ['shell-exec cmd.exe /c C:\Users\Tranquil\.glzr\bin\rio.cmd']
-    bindings: ['alt+w']
-
   - commands: ['shell-exec cmd.exe /c C:\Users\Tranquil\.glzr\bin\explorer.cmd']
     bindings: ['alt+e']
 

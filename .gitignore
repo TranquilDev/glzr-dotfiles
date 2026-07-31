@@ -2,3 +2,7 @@
 logs/
 cache/
 .DS_Store
+
+# Local timestamped backups
+*.before-*
+
