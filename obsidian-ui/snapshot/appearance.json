@@ -1,0 +1,10 @@
+{
+  "baseFontSize": 22,
+  "nativeMenus": false,
+  "theme": "moonstone",
+  "accentColor": "#696969",
+  "cssTheme": "Encore",
+  "enabledCssSnippets": [
+    "zz-encore-sidebar-tab-fix"
+  ]
+}

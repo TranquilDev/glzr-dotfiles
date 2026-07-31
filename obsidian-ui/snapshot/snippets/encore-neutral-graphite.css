@@ -1,0 +1,165 @@
+/*
+  Encore Light — Neutral Graphite
+  Прозрачность и фоновое изображение Encore не изменяются.
+*/
+
+body.theme-light {
+    /* Убираем синие акценты */
+    --interactive-accent: #3f4045;
+    --interactive-accent-hover: #292a2e;
+    --interactive-normal: rgba(245, 245, 246, 0.72);
+    --interactive-hover: rgba(42, 42, 46, 0.10);
+
+    --text-normal: #292a2e;
+    --text-muted: #626269;
+    --text-faint: #8a898f;
+    --text-accent: #34353a;
+    --text-accent-hover: #111215;
+
+    --icon-color: #55555c;
+    --icon-color-hover: #25262a;
+    --icon-color-active: #ffffff;
+
+    --checkbox-color: #414247;
+    --checkbox-color-hover: #292a2e;
+
+    --background-modifier-hover: rgba(40, 40, 44, 0.08);
+    --background-modifier-active-hover: rgba(40, 40, 44, 0.13);
+    --background-modifier-border: rgba(35, 35, 39, 0.13);
+    --background-modifier-border-hover: rgba(35, 35, 39, 0.23);
+    --background-modifier-border-focus: rgba(35, 35, 39, 0.38);
+
+    --divider-color: rgba(35, 35, 39, 0.13);
+    --tab-outline-color: rgba(35, 35, 39, 0.13);
+
+    --nav-item-color: #57575e;
+    --nav-item-color-hover: #24252a;
+    --nav-item-color-active: #ffffff;
+    --nav-item-background-hover: rgba(42, 42, 46, 0.08);
+    --nav-item-background-active: #414247;
+
+    --h1-color: #24252a;
+    --h2-color: #2c2d32;
+    --h3-color: #393a40;
+    --h4-color: #46474d;
+
+    --link-color: #3d3e44;
+    --link-color-hover: #111215;
+    --link-unresolved-color: #77777e;
+
+    --selection-background: rgba(60, 60, 66, 0.20);
+}
+
+/* Нейтральная стеклянная боковая панель вместо синеватой */
+body.theme-light .workspace-split.mod-left-split,
+body.theme-light .workspace-split.mod-right-split,
+body.theme-light .workspace-ribbon {
+    --background-secondary:
+        rgba(236, 235, 234, 0.62);
+    --background-secondary-alt:
+        rgba(221, 220, 219, 0.68);
+}
+
+/* Активный файл — строгий графитовый акцент */
+body.theme-light .nav-file-title.is-active,
+body.theme-light .nav-folder-title.is-active,
+body.theme-light .tree-item-self.is-active {
+    color: #ffffff !important;
+    background: rgba(55, 56, 61, 0.90) !important;
+    border-radius: 7px;
+    box-shadow: 0 4px 14px rgba(20, 20, 23, 0.12);
+}
+
+body.theme-light .nav-file-title.is-active *,
+body.theme-light .nav-folder-title.is-active *,
+body.theme-light .tree-item-self.is-active * {
+    color: #ffffff !important;
+}
+
+/* Активная вкладка */
+body.theme-light .workspace-tab-header.is-active {
+    color: #ffffff !important;
+    background: rgba(53, 54, 59, 0.90) !important;
+    box-shadow:
+        inset 0 -2px 0 rgba(255, 255, 255, 0.72),
+        0 4px 14px rgba(20, 20, 23, 0.11);
+}
+
+body.theme-light
+.workspace-tab-header.is-active
+.workspace-tab-header-inner-title,
+body.theme-light
+.workspace-tab-header.is-active
+.workspace-tab-header-inner-icon {
+    color: #ffffff !important;
+}
+
+/* Нейтральные hover-состояния */
+body.theme-light .workspace-tab-header:hover,
+body.theme-light .nav-file-title:hover,
+body.theme-light .nav-folder-title:hover,
+body.theme-light .tree-item-self:hover,
+body.theme-light .clickable-icon:hover {
+    background-color: rgba(38, 38, 42, 0.08);
+}
+
+/* Чекбоксы */
+body.theme-light input[type="checkbox"] {
+    border-color: #68686f !important;
+    border-radius: 5px;
+}
+
+body.theme-light input[type="checkbox"]:checked {
+    background-color: #414247 !important;
+    border-color: #414247 !important;
+}
+
+/* Таблицы без голубого оттенка */
+body.theme-light table,
+body.theme-light th,
+body.theme-light td {
+    border-color: rgba(45, 45, 49, 0.16);
+}
+
+body.theme-light th {
+    background: rgba(45, 45, 49, 0.055);
+}
+
+/* Выделение и код */
+body.theme-light ::selection {
+    color: #17171a;
+    background: rgba(70, 70, 76, 0.22);
+}
+
+body.theme-light code {
+    color: #303136;
+    background: rgba(45, 45, 49, 0.075);
+}
+
+/* Нижний статус — тёмная стеклянная капсула */
+body.theme-light .status-bar {
+    color: #f2f2f3;
+    background: rgba(43, 44, 49, 0.88);
+    border-color: rgba(20, 20, 23, 0.18);
+    box-shadow: 0 5px 18px rgba(20, 20, 23, 0.13);
+}
+
+/* Плавные, но неброские реакции */
+body.theme-light .workspace-tab-header,
+body.theme-light .nav-file-title,
+body.theme-light .nav-folder-title,
+body.theme-light .tree-item-self,
+body.theme-light .clickable-icon,
+body.theme-light button,
+body.theme-light input[type="checkbox"] {
+    transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+body.theme-light .clickable-icon:hover {
+    transform: translateY(-1px);
+}

@@ -1,0 +1,10 @@
+{
+  "encore-settings@@theme-light": "encore-theme-light-sterling",
+  "encore-settings@@encore-translucency": true,
+  "encore-settings@@encore-translucency-strength": 0.2,
+  "encore-settings@@encore-translucency-blur-amount": 0,
+  "encore-settings@@encore-fancy-headers": true,
+  "encore-settings@@encore-mobile-oled-mode": false,
+  "encore-settings@@encore-disable-grain": true,
+  "encore-settings@@encore-translucency-background": "encore-bg-image"
+}
