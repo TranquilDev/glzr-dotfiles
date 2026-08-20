@@ -102,7 +102,7 @@ widgets:
         direction: "down"
         show_week_numbers: true
       callbacks:
-        on_left: "toggle_calendar"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   language:
@@ -112,7 +112,7 @@ widgets:
       label_alt: "{lang[full_name]}"
       update_interval: 1
       callbacks:
-        on_left: "toggle_menu"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "toggle_label"
       language_menu:
@@ -148,7 +148,7 @@ widgets:
         fade_out_duration: 100
       group_apps: true
       callbacks:
-        on_left: "toggle_launchpad"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
       keybindings:
@@ -248,7 +248,7 @@ widgets:
         direction: "down"
         show_week_numbers: true
       callbacks:
-        on_left: "toggle_calendar"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   volume:
@@ -271,7 +271,7 @@ widgets:
         show_apps: true
         show_apps_expanded: true
       callbacks:
-        on_left: "toggle_volume_menu"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "toggle_mute"
   glazewm_workspaces:
@@ -301,7 +301,7 @@ widgets:
       title_label:
         enabled: false
       callbacks:
-        on_left: "toggle_window"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "close_app"
         on_right: "context_menu"
       ignore_apps:
@@ -320,7 +320,7 @@ widgets:
       max_length_ellipsis: "..."
       monitor_exclusive: true
       callbacks:
-        on_left: "do_nothing"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   media:
@@ -396,7 +396,7 @@ widgets:
         unmute: "\uf028"
 
       callbacks:
-        on_left: "toggle_media_menu"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "toggle_play_pause"
         on_right: "open_media_source"
   hardware-grouper:
@@ -417,7 +417,7 @@ widgets:
       update_interval: 5000
       hide_decimal: true
       callbacks:
-        on_left: "do_nothing"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   memory:
@@ -428,7 +428,7 @@ widgets:
       update_interval: 5000
       hide_decimal: true
       callbacks:
-        on_left: "do_nothing"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   gpu:
@@ -439,7 +439,7 @@ widgets:
       update_interval: 5000
       hide_decimal: true
       callbacks:
-        on_left: "do_nothing"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   glazewm_tiling_direction:
@@ -459,7 +459,7 @@ widgets:
         pause: ""
       binding_modes_to_cycle_through: ["none", "resize", "pause"]
       callbacks:
-        on_left: "next_binding_mode"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "disable_binding_mode"
   wallpapers:
@@ -480,7 +480,7 @@ widgets:
         lazy_load_fadein: 1000
         image_corner_radius: 4
       callbacks:
-        on_left: "toggle_gallery"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_middle: "do_nothing"
         on_right: "do_nothing"
   notifications:
@@ -493,7 +493,7 @@ widgets:
         new: ""
         default: ""
       callbacks:
-        on_left: "toggle_notification"
+        on_left: "exec C:\\Users\\Tranquil\\.config\\yasb\\open-clash.cmd"
         on_right: "do_nothing"
         on_middle: "do_nothing"
   power_menu:
@@ -528,3 +528,4 @@ widgets:
           launch: 'wscript.exe C:\Users\Tranquil\.config\yasb\scripts\game-mode-toggle.vbs'
           name: "Game mode: disable GlazeWM Alt hotkeys"
   # HYPR GAME MODE WIDGET END
+

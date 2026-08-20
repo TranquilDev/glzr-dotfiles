@@ -1,2 +1,2 @@
 @echo off
-start "" "G:\Tools\VPN\Clash Verge\clash-verge.exe"
+powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Users\Tranquil\.config\hotkeys\open-clash.ps1"
